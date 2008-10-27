@@ -1,0 +1,11 @@
+--- Makefile	2008-06-17 14:45:50.000000000 -0500
++++ Makefile	2008-06-17 14:45:50.000000000 -0500
+@@ -53,7 +53,7 @@
+ 
+ cfdg: $(OBJS)
+ 	$(LINK.o) $^ -L/usr/local/lib -lstdc++ -lpng -lz -fexceptions -o $@
+-	strip $@
++#	strip $@
+ 
+ 
+ #

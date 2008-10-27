@@ -1,0 +1,13 @@
+--- Makefile	2008-10-15 07:57:00.000000000 -0500
++++ Makefile	2008-10-15 07:57:00.000000000 -0500
+@@ -102,8 +102,9 @@
+ # Rules
+ #
+ 
++OPTFLAGS = -03
+ CPPFLAGS += $(patsubst %,-I%,$(INC_DIRS))
+-CPPFLAGS += -O3
++CPPFLAGS += $(OPTFLAGS)
+ #CPPFLAGS += -ggdb
+ 
+ $(OBJ_DIR)/%.o : %.cpp
