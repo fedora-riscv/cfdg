@@ -1,0 +1,10 @@
+--- src-common/SVGCanvas.cpp	2008-06-17 14:22:22.000000000 -0500
++++ src-common/SVGCanvas.cpp	2008-06-17 14:22:22.000000000 -0500
+@@ -14,6 +14,7 @@
+ #include <iostream>
+ #include <sstream>
+ #include "primShape.h"
++#include <string.h>
+ 
+ using namespace std;
+ 

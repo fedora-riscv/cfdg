@@ -1,0 +1,11 @@
+--- src-common/builder.cpp	2008-06-17 14:15:23.000000000 -0500
++++ src-common/builder.cpp	2008-06-17 14:15:23.000000000 -0500
+@@ -2,6 +2,8 @@
+ 
+ #include "agg_trans_affine.h"
+ #include "cfdgimpl.h"
++#include <string.h>
++#include <cstdlib>
+ 
+ #ifdef WIN32
+ #include "rand48.h"
