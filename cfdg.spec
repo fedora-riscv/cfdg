@@ -1,6 +1,6 @@
 Name: cfdg
 Version:  2.1
-Release:  5%{?dist}
+Release:  6%{?dist}
 Summary: Context Free Design Grammar
 
 Group: Amusements/Games 
@@ -67,6 +67,9 @@ rm -rf %{buildroot}
 %doc input/* LICENSE.txt README.txt
 
 %changelog
+* Mon Feb 23 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.1-6
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_11_Mass_Rebuild
+
 * Fri Oct 24 2008 Jon Ciesla <limb@jcomserv.net> - 2.1-5
 - Created modified tarball for licensing issue.
 
