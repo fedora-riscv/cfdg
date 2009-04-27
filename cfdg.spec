@@ -1,14 +1,14 @@
 Name: cfdg
-Version:  2.1
-Release:  6%{?dist}
+Version:  2.2
+Release:  1%{?dist}
 Summary: Context Free Design Grammar
 
 Group: Amusements/Games 
 License: GPLv2+
 URL: http://www.contextfreeart.org/
 
-Source0: ContextFreeSource%{version}.tar.gz
-#Source0: http://www.contextfreeart.org/download/ContextFreeSource%{version}.tgz
+#Source0: ContextFreeSource%{version}.tar.gz
+Source0: http://www.contextfreeart.org/download/ContextFreeSource%{version}.tgz
 #Modified tarball due to licensing issues, to be fixed in 2.2
 #To create from upstream:
 #gunzip ContextFreeSource2.1.tgz
@@ -20,15 +20,15 @@ Source0: ContextFreeSource%{version}.tar.gz
 #gzip ContextFreeSource2.1.tar
 
 #GCC 4.3 compatibility patches.  Submitted upstream via email 2008-06-25.
-Patch0: contextfree-2.1-builder-includes.patch
-Patch1: contextfree-2.1-yglue-includes.patch
-Patch2: contextfree-2.1-SVGCanvas-includes.patch
-Patch3: contextfree-2.1-tiledCanvas-includes.patch
-Patch4: contextfree-2.1-posixSystem-includes.patch
+#Patch0: contextfree-2.1-builder-includes.patch
+#Patch1: contextfree-2.1-yglue-includes.patch
+#Patch2: contextfree-2.1-SVGCanvas-includes.patch
+#Patch3: contextfree-2.1-tiledCanvas-includes.patch
+#Patch4: contextfree-2.1-posixSystem-includes.patch
 #Strip patch.
 Patch5: contextfree-2.1-Makefile-nostrip.patch
-Patch6: contextfree-2.1-mktemp.patch
-Patch7: contextfree-2.1-optflags.patch
+Patch6: contextfree-2.2-mktemp.patch
+Patch7: contextfree-2.2-optflags.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root%(%{__id_u} -n)
 BuildRequires: libpng-devel, byacc, flex
 
@@ -40,11 +40,11 @@ create images that can contain millions of shapes.
 %prep
 %setup -qn ContextFreeSource%{version}
 
-%patch0 -p0
-%patch1 -p0
-%patch2 -p0
-%patch3 -p0
-%patch4 -p0
+#%patch0 -p0
+#%patch1 -p0
+#%patch2 -p0
+#%patch3 -p0
+#%patch4 -p0
 %patch5 -p0
 %patch6 -p0
 %patch7 -p0
@@ -67,6 +67,10 @@ rm -rf %{buildroot}
 %doc input/* LICENSE.txt README.txt
 
 %changelog
+* Mon Apr 27 2009 Jon Ciesla <limb@jcomserv.net> - 2.2-1
+- 2.2, fixed licencing and gcc issues.
+- Updated mktemp, optflag patches.
+
 * Mon Feb 23 2009 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.1-6
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_11_Mass_Rebuild
 

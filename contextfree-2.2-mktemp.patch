@@ -1,0 +1,5 @@
+--- src-unix/posixSystem.cpp~	2009-04-27 15:06:36.000000000 -0500
++++ src-unix/posixSystem.cpp	2009-04-27 15:06:36.000000000 -0500
+@@ -107 +107 @@
+-	if (mktemp(b)) {
++	if (mkstemp(b)) {
