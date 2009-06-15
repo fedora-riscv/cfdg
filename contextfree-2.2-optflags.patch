@@ -4,4 +4,4 @@
 +OPTFLAGS = -03 -Wall
 @@ -108 +109 @@
 -CPPFLAGS += -O3 -Wall
-++CPPFLAGS += $(OPTFLAGS)
++CPPFLAGS += $(OPTFLAGS)
