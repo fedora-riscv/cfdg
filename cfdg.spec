@@ -1,6 +1,6 @@
 Name: cfdg
 Version:  2.2
-Release:  2%{?dist}
+Release:  3%{?dist}
 Summary: Context Free Design Grammar
 
 Group: Amusements/Games 
@@ -67,6 +67,9 @@ rm -rf %{buildroot}
 %doc input/* LICENSE.txt README.txt
 
 %changelog
+* Tue Jun 16 2009 Jon Ciesla <limb@jcomserv.net> - 2.2-3
+- Rebuild due to 505774.
+
 * Fri Jun 12 2009 Ville Skyttä <ville.skytta at iki.fi> - 2.2-2
 - Build with %%{optflags}.
 
