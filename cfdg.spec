@@ -1,6 +1,6 @@
 Name: cfdg
 Version:  2.2.1
-Release:  1%{?dist}
+Release:  2%{?dist}
 Summary: Context Free Design Grammar
 
 Group: Amusements/Games 
@@ -29,6 +29,7 @@ Source0: http://www.contextfreeart.org/download/ContextFreeSource%{version}.tgz
 Patch5: contextfree-2.1-Makefile-nostrip.patch
 Patch6: contextfree-2.2-mktemp.patch
 Patch7: contextfree-2.2-optflags.patch
+Patch8: contextfree-2.2.1-dsolink.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root%(%{__id_u} -n)
 BuildRequires: libpng-devel, byacc, flex
 
@@ -48,6 +49,7 @@ create images that can contain millions of shapes.
 %patch5 -p0
 %patch6 -p0
 %patch7 -p0
+%patch8 -p0
 
 %build
 
@@ -67,6 +69,9 @@ rm -rf %{buildroot}
 %doc input/* LICENSE.txt README.txt
 
 %changelog
+* Mon Jun 28 2010 Jon Ciesla <limb@jcomserv.net> - 2.2.1-2
+- Fix for FTBFS, BZ 600013.
+
 * Mon Oct 05 2009 Jon Ciesla <limb@jcomserv.net> - 2.2.1-1
 - New upstream.
 
