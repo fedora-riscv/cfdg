@@ -1,6 +1,6 @@
 Name: cfdg
-Version:  2.2.1
-Release:  2%{?dist}
+Version:  2.2.2
+Release:  1%{?dist}
 Summary: Context Free Design Grammar
 
 Group: Amusements/Games 
@@ -30,6 +30,7 @@ Patch5: contextfree-2.1-Makefile-nostrip.patch
 Patch6: contextfree-2.2-mktemp.patch
 Patch7: contextfree-2.2-optflags.patch
 Patch8: contextfree-2.2.1-dsolink.patch
+Patch9: contextfree-2.2.2-yglue-type-fix.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root%(%{__id_u} -n)
 BuildRequires: libpng-devel, byacc, flex
 
@@ -39,7 +40,7 @@ called a grammar. The program follows the instructions in a few seconds to
 create images that can contain millions of shapes.
 
 %prep
-%setup -qn ContextFreeSource%{version}
+%setup -qn ContextFreeSource%{version}.tgz
 
 #%patch0 -p0
 #%patch1 -p0
@@ -50,6 +51,7 @@ create images that can contain millions of shapes.
 %patch6 -p0
 %patch7 -p0
 %patch8 -p0
+%patch9 -p0
 
 %build
 
@@ -69,6 +71,9 @@ rm -rf %{buildroot}
 %doc input/* LICENSE.txt README.txt
 
 %changelog
+* Wed Feb 02 2011 Jon Ciesla <limb@jcomserv.net> - 2.2.2-1
+- New upstream.
+
 * Mon Jun 28 2010 Jon Ciesla <limb@jcomserv.net> - 2.2.1-2
 - Fix for FTBFS, BZ 600013.
 

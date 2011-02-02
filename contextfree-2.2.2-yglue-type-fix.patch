@@ -1,0 +1,11 @@
+--- src-common/yglue.h~	2010-09-12 23:15:28.000000000 -0500
++++ src-common/yglue.h	2011-02-02 11:44:01.000000000 -0600
+@@ -51,7 +51,7 @@
+ int yyget_lineno(void);
+ FILE *yyget_in  (void);
+ FILE *yyget_out  (void);
+-size_t yyget_leng  (void);
++int yyget_leng  (void);
+ char *yyget_text  (void);
+ void yyset_lineno (int  line_number );
+ void yyset_in (FILE *  in_str );
