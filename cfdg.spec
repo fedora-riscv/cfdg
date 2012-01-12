@@ -1,6 +1,6 @@
 Name: cfdg
 Version:  2.2.2
-Release:  3%{?dist}
+Release:  4%{?dist}
 Summary: Context Free Design Grammar
 
 Group: Amusements/Games 
@@ -71,6 +71,9 @@ rm -rf %{buildroot}
 %doc input/* LICENSE.txt README.txt
 
 %changelog
+* Thu Jan 12 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.2.2-4
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
+
 * Fri Nov 10 2011 Jon Ciesla <limb@jcomserv.net> - 2.2.2-3
 - Rebuild for libpng 1.5.
 
