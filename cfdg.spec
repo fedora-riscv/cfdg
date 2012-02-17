@@ -1,23 +1,13 @@
 Name: cfdg
-Version:  2.2.2
-Release:  4%{?dist}
+Version:  3.0
+Release:  0.beta2%{?dist}
 Summary: Context Free Design Grammar
 
 Group: Amusements/Games 
 License: GPLv2+
 URL: http://www.contextfreeart.org/
 
-#Source0: ContextFreeSource%{version}.tar.gz
-Source0: http://www.contextfreeart.org/download/ContextFreeSource%{version}.tgz
-#Modified tarball due to licensing issues, to be fixed in 2.2
-#To create from upstream:
-#gunzip ContextFreeSource2.1.tgz
-#tar -xf ContextFreeSource2.1.tar
-#rm ContextFreeSource2.1/src-common/test.cpp 
-#rm ContextFreeSource2.1/src-common/test.h
-#rm ContextFreeSource2.1/src-common/test-test.cpp 
-#tar -cf ContextFreeSource2.1.tar ContextFreeSource2.1
-#gzip ContextFreeSource2.1.tar
+Source0: http://www.contextfreeart.org/download/ContextFreeSource3.0beta2.tgz
 
 #GCC 4.3 compatibility patches.  Submitted upstream via email 2008-06-25.
 #Patch0: contextfree-2.1-builder-includes.patch
@@ -28,11 +18,12 @@ Source0: http://www.contextfreeart.org/download/ContextFreeSource%{version}.tgz
 #Strip patch.
 Patch5: contextfree-2.1-Makefile-nostrip.patch
 Patch6: contextfree-2.2-mktemp.patch
-Patch7: contextfree-2.2-optflags.patch
+#Patch7: contextfree-2.2-optflags.patch
 Patch8: contextfree-2.2.1-dsolink.patch
-Patch9: contextfree-2.2.2-yglue-type-fix.patch
+#Patch9: contextfree-2.2.2-yglue-type-fix.patch
+#Patch10: contextfree-3.0-optflags.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root%(%{__id_u} -n)
-BuildRequires: libpng-devel, byacc, flex
+BuildRequires: libpng-devel, bison, flex
 
 %description
 Context Free is a program that generates images from written instructions 
@@ -40,7 +31,7 @@ called a grammar. The program follows the instructions in a few seconds to
 create images that can contain millions of shapes.
 
 %prep
-%setup -qn ContextFreeSource%{version}.tgz
+%setup -qn ContextFreeSource3.0beta2
 
 #%patch0 -p0
 #%patch1 -p0
@@ -49,9 +40,10 @@ create images that can contain millions of shapes.
 #%patch4 -p0
 %patch5 -p0
 %patch6 -p0
-%patch7 -p0
+#%patch7 -p0
 %patch8 -p0
-%patch9 -p0
+#%patch9 -p0
+#%patch10 -p0
 
 %build
 
@@ -71,6 +63,9 @@ rm -rf %{buildroot}
 %doc input/* LICENSE.txt README.txt
 
 %changelog
+* Fri Feb 17 2012 Jon Ciesla <limburgher@gmail.com> - 3.0-0.beta2
+- New upstream.
+
 * Thu Jan 12 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 2.2.2-4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_17_Mass_Rebuild
 
