@@ -1,6 +1,6 @@
 Name: cfdg
 Version:  3.0
-Release:  0.beta2%{?dist}
+Release:  0.beta2%{?dist}.1
 Summary: Context Free Design Grammar
 
 Group: Amusements/Games 
@@ -21,7 +21,7 @@ Patch6: contextfree-2.2-mktemp.patch
 #Patch7: contextfree-2.2-optflags.patch
 Patch8: contextfree-2.2.1-dsolink.patch
 #Patch9: contextfree-2.2.2-yglue-type-fix.patch
-#Patch10: contextfree-3.0-optflags.patch
+Patch10: contextfree-3.0-optflags.patch
 BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root%(%{__id_u} -n)
 BuildRequires: libpng-devel, bison, flex
 
@@ -43,11 +43,11 @@ create images that can contain millions of shapes.
 #%patch7 -p0
 %patch8 -p0
 #%patch9 -p0
-#%patch10 -p0
+%patch10 -p0
 
 %build
 
-make OPTFLAGS='%{optflags}' %{?_smp_mflags}
+OPTFLAGS=$RPM_OPT_FLAGS make %{?_smp_mflags}
 
 %install
 rm -rf %{buildroot}
@@ -63,6 +63,9 @@ rm -rf %{buildroot}
 %doc input/* LICENSE.txt README.txt
 
 %changelog
+* Mon Feb 20 2012 Jon Ciesla <limburgher@gmail.com> - 3.0-0.beta2.1
+- Fix optflags, BZ 795104.
+
 * Fri Feb 17 2012 Jon Ciesla <limburgher@gmail.com> - 3.0-0.beta2
 - New upstream.
 
