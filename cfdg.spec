@@ -1,6 +1,6 @@
 Name: cfdg
 Version:  3.0
-Release:  0.beta2%{?dist}.1
+Release:  0.beta2%{?dist}.2
 Summary: Context Free Design Grammar
 
 Group: Amusements/Games 
@@ -63,6 +63,9 @@ rm -rf %{buildroot}
 %doc input/* LICENSE.txt README.txt
 
 %changelog
+* Wed Jul 18 2012 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.0-0.beta2.2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_18_Mass_Rebuild
+
 * Mon Feb 20 2012 Jon Ciesla <limburgher@gmail.com> - 3.0-0.beta2.1
 - Fix optflags, BZ 795104.
 
