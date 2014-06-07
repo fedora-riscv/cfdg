@@ -1,6 +1,6 @@
 Name: cfdg
 Version:  3.0
-Release:  0.beta2%{?dist}.4
+Release:  0.beta2%{?dist}.5
 Summary: Context Free Design Grammar
 
 Group: Amusements/Games 
@@ -63,6 +63,9 @@ rm -rf %{buildroot}
 %doc input/* LICENSE.txt README.txt
 
 %changelog
+* Sat Jun 07 2014 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.0-0.beta2.5
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_21_Mass_Rebuild
+
 * Sat Aug 03 2013 Fedora Release Engineering <rel-eng@lists.fedoraproject.org> - 3.0-0.beta2.4
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_20_Mass_Rebuild
 
