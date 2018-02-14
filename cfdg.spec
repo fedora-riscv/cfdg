@@ -52,9 +52,6 @@ OPTFLAGS=$RPM_OPT_FLAGS make %{?_smp_mflags}
 rm -rf %{buildroot}
 install -D -m 755 cfdg %{buildroot}%{_bindir}/cfdg
 
-%clean
-rm -rf %{buildroot}
-
 
 %files
 %defattr(-,root,root,-)
