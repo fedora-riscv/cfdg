@@ -54,7 +54,6 @@ install -D -m 755 cfdg %{buildroot}%{_bindir}/cfdg
 
 
 %files
-%defattr(-,root,root,-)
 %{_bindir}/cfdg
 %doc input/* LICENSE.txt README.txt
 
