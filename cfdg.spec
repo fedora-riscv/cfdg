@@ -22,6 +22,7 @@ Patch6: contextfree-2.2-mktemp.patch
 Patch8: contextfree-2.2.1-dsolink.patch
 #Patch9: contextfree-2.2.2-yglue-type-fix.patch
 Patch10: contextfree-3.0-optflags.patch
+BuildRequires:  gcc-c++
 BuildRequires: libpng-devel, bison, flex
 
 %description
