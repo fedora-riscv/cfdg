@@ -3,7 +3,6 @@ Version:  3.0
 Release:  0.beta2%{?dist}.15
 Summary: Context Free Design Grammar
 
-Group: Amusements/Games 
 License: GPLv2+
 URL: http://www.contextfreeart.org/
 
