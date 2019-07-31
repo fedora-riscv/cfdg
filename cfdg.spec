@@ -10,6 +10,7 @@ Source0: http://www.contextfreeart.org/download/ContextFreeSource3.1.tgz
 BuildRequires: gcc-c++ libatomic libicu-devel
 BuildRequires: libpng-devel bison flex
 Patch0:  cfdg-nostrip.patch
+Patch1:  cfdg-gcc.patch
 
 %description
 Context Free is a program that generates images from written instructions 
@@ -20,6 +21,9 @@ create images that can contain millions of shapes.
 %setup -qcn ContextFreeSource3.1
 
 %patch0 -p0
+%ifarch ppc64le
+%patch1 -p0
+%endif
 
 %build
 

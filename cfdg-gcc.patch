@@ -1,0 +1,11 @@
+--- Makefile~	2019-07-31 16:25:31.000000000 -0500
++++ Makefile	2019-07-31 16:26:03.828996069 -0500
+@@ -195,7 +195,7 @@
+ #
+ 
+ CXXFLAGS += $(patsubst %,-I%,$(INC_DIRS))
+-CXXFLAGS += -O2 -Wall -Wextra -march=native -Wno-parentheses -std=c++14
++CXXFLAGS += -O2 -Wall -Wextra -mcpu=native -Wno-parentheses -std=c++14
+ CXXFLAGS += -g -D_GLIBCXX_USE_C99_MATH=1
+ CPPFLAGS += -DNDEBUG
+ 
