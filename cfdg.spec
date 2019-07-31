@@ -1,28 +1,15 @@
 Name: cfdg
-Version:  3.0
-Release:  0.beta2%{?dist}.17
+Version:  3.1
+Release:  1%{?dist}
 Summary: Context Free Design Grammar
 
 License: GPLv2+
 URL: http://www.contextfreeart.org/
 
-Source0: http://www.contextfreeart.org/download/ContextFreeSource3.0beta2.tgz
-
-#GCC 4.3 compatibility patches.  Submitted upstream via email 2008-06-25.
-#Patch0: contextfree-2.1-builder-includes.patch
-#Patch1: contextfree-2.1-yglue-includes.patch
-#Patch2: contextfree-2.1-SVGCanvas-includes.patch
-#Patch3: contextfree-2.1-tiledCanvas-includes.patch
-#Patch4: contextfree-2.1-posixSystem-includes.patch
-#Strip patch.
-Patch5: contextfree-2.1-Makefile-nostrip.patch
-Patch6: contextfree-2.2-mktemp.patch
-#Patch7: contextfree-2.2-optflags.patch
-Patch8: contextfree-2.2.1-dsolink.patch
-#Patch9: contextfree-2.2.2-yglue-type-fix.patch
-Patch10: contextfree-3.0-optflags.patch
-BuildRequires:  gcc-c++
-BuildRequires: libpng-devel, bison, flex
+Source0: http://www.contextfreeart.org/download/ContextFreeSource3.1.tgz
+BuildRequires: gcc-c++ libatomic libicu-devel
+BuildRequires: libpng-devel bison flex
+Patch0:  cfdg-nostrip.patch
 
 %description
 Context Free is a program that generates images from written instructions 
@@ -30,34 +17,27 @@ called a grammar. The program follows the instructions in a few seconds to
 create images that can contain millions of shapes.
 
 %prep
-%setup -qn ContextFreeSource3.0beta2
+%setup -qcn ContextFreeSource3.1
 
-#%patch0 -p0
-#%patch1 -p0
-#%patch2 -p0
-#%patch3 -p0
-#%patch4 -p0
-%patch5 -p0
-%patch6 -p0
-#%patch7 -p0
-%patch8 -p0
-#%patch9 -p0
-%patch10 -p0
+%patch0 -p0
 
 %build
 
 OPTFLAGS=$RPM_OPT_FLAGS make %{?_smp_mflags}
 
 %install
-rm -rf %{buildroot}
 install -D -m 755 cfdg %{buildroot}%{_bindir}/cfdg
 
 
 %files
 %{_bindir}/cfdg
-%doc input/* LICENSE.txt README.txt
+%license LICENSE.txt
+%doc input/* README
 
 %changelog
+* Wed Jul 31 2019 Gwyn Ciesla <gwync@protonmail.com> - 3.1-1
+- 3.1
+
 * Wed Jul 24 2019 Fedora Release Engineering <releng@fedoraproject.org> - 3.0-0.beta2.17
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_31_Mass_Rebuild
 
