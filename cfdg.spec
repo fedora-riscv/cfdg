@@ -1,12 +1,12 @@
 Name: cfdg
-Version:  3.1
+Version:  3.2
 Release:  1%{?dist}
 Summary: Context Free Design Grammar
 
 License: GPLv2+
 URL: http://www.contextfreeart.org/
 
-Source0: http://www.contextfreeart.org/download/ContextFreeSource3.1.tgz
+Source0: http://www.contextfreeart.org/download/ContextFreeSource%{version}.tgz
 BuildRequires: gcc-c++ libatomic libicu-devel
 BuildRequires: libpng-devel bison flex
 Patch0:  cfdg-nostrip.patch
@@ -18,7 +18,7 @@ called a grammar. The program follows the instructions in a few seconds to
 create images that can contain millions of shapes.
 
 %prep
-%setup -qcn ContextFreeSource3.1
+%setup -qcn ContextFreeSource%{version}
 
 %patch0 -p0
 %ifarch ppc64le
@@ -39,6 +39,9 @@ install -D -m 755 cfdg %{buildroot}%{_bindir}/cfdg
 %doc input/* README
 
 %changelog
+* Tue Aug 06 2019 Gwyn Ciesla <gwync@protonmail.com> - 3.2-1
+- 3.2
+
 * Wed Jul 31 2019 Gwyn Ciesla <gwync@protonmail.com> - 3.1-1
 - 3.1
 

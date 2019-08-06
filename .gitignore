@@ -31,3 +31,4 @@ src-net/.vs/
 .vs/
 src-win/win-install/*.exe
 /ContextFreeSource3.1.tgz
+/ContextFreeSource3.2.tgz
