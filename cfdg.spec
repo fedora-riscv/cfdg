@@ -1,6 +1,6 @@
 Name: cfdg
 Version:  3.2
-Release:  2%{?dist}
+Release:  3%{?dist}
 Summary: Context Free Design Grammar
 
 License: GPLv2+
@@ -39,6 +39,9 @@ install -D -m 755 cfdg %{buildroot}%{_bindir}/cfdg
 %doc input/* README
 
 %changelog
+* Tue Jan 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 3.2-3
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Fri Nov 01 2019 Pete Walter <pwalter@fedoraproject.org> - 3.2-2
 - Rebuild for ICU 65
 
