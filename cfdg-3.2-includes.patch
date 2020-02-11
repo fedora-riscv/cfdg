@@ -1,0 +1,31 @@
+--- src-common/cfdg.cpp~	2019-08-02 15:30:09.000000000 -0500
++++ src-common/cfdg.cpp	2020-02-11 16:12:54.983008263 -0600
+@@ -42,7 +42,7 @@
+ #include "tiledCanvas.h"
+ #include <fstream>
+ #include <sstream>
+-
++#include <algorithm>
+ 
+ yy::location CfdgError::Default;
+ double Renderer::Infinity = std::numeric_limits<double>::infinity();      // Ignore the gcc warning
+--- src-common/builder.cpp~	2019-08-02 15:30:09.000000000 -0500
++++ src-common/builder.cpp	2020-02-11 16:15:29.291769639 -0600
+@@ -43,6 +43,7 @@
+ #include "scanner.h"
+ #include <typeinfo>
+ #include "backwards.h"
++#include <algorithm>
+ 
+ using namespace AST;
+ 
+--- src-common/ast.cpp~	2019-08-02 15:30:09.000000000 -0500
++++ src-common/ast.cpp	2020-02-11 16:20:15.447327131 -0600
+@@ -33,6 +33,7 @@
+ #include "attributes.h"
+ #include <cstdlib>
+ #include <cstring>
++#include <algorithm>
+ 
+ namespace AST {
+     const std::map<expType, std::string> ASTparameter::typeNames =

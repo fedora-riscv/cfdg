@@ -1,6 +1,6 @@
 Name: cfdg
 Version:  3.2
-Release:  3%{?dist}
+Release:  4%{?dist}
 Summary: Context Free Design Grammar
 
 License: GPLv2+
@@ -11,6 +11,7 @@ BuildRequires: gcc-c++ libatomic libicu-devel
 BuildRequires: libpng-devel bison flex
 Patch0:  cfdg-nostrip.patch
 Patch1:  cfdg-gcc.patch
+Patch2:  cfdg-3.2-includes.patch
 
 %description
 Context Free is a program that generates images from written instructions 
@@ -24,6 +25,7 @@ create images that can contain millions of shapes.
 %ifarch ppc64le
 %patch1 -p0
 %endif
+%patch2 -p0
 
 %build
 
@@ -39,6 +41,9 @@ install -D -m 755 cfdg %{buildroot}%{_bindir}/cfdg
 %doc input/* README
 
 %changelog
+* Tue Feb 11 2020 Gwyn Ciesla <gwync@protonmail.com> - 3.2-4
+- Fix FTBFS.
+
 * Tue Jan 28 2020 Fedora Release Engineering <releng@fedoraproject.org> - 3.2-3
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
