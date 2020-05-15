@@ -1,6 +1,6 @@
 Name: cfdg
 Version:  3.3
-Release:  1%{?dist}
+Release:  2%{?dist}
 Summary: Context Free Design Grammar
 
 License: GPLv2+
@@ -39,6 +39,9 @@ install -D -m 755 cfdg %{buildroot}%{_bindir}/cfdg
 %doc input/* README
 
 %changelog
+* Fri May 15 2020 Pete Walter <pwalter@fedoraproject.org> - 3.3-2
+- Rebuild for ICU 67
+
 * Mon Apr 13 2020 Gwyn Ciesla <gwync@protonmail.com> - 3.3-1
 - 3.3
 
