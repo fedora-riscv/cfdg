@@ -9,6 +9,7 @@ URL: http://www.contextfreeart.org/
 Source0: http://www.contextfreeart.org/download/ContextFreeSource%{version}.tgz
 BuildRequires: gcc-c++ libatomic libicu-devel
 BuildRequires: libpng-devel bison flex
+BuildRequires: make
 Patch0:  cfdg-nostrip.patch
 Patch1:  cfdg-gcc.patch
 
